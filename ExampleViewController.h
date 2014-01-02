@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ExampleViewController.h
 //  learningLanguage
 //
 //  Created by huyheo on 1/2/14.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreData/CoreData.h>
 
-@interface ViewController : UIViewController
+@interface ExampleViewController : UIViewController
 
 @end

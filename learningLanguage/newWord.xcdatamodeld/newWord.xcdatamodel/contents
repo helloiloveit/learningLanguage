@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Example" representedClassName="Example" syncable="YES">
+        <attribute name="example" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="exampleOfWord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NewWordTable" inverseName="wordToExample" inverseEntity="NewWordTable" syncable="YES"/>
+    </entity>
+    <entity name="NewWordTable" representedClassName="NewWordTable" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="meanning" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="wordToExample" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Example" inverseName="exampleOfWord" inverseEntity="Example" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="NewWordTable" positionX="-7913" positionY="-496" width="128" height="103"/>
+        <element name="Example" positionX="-7659" positionY="-486" width="128" height="73"/>
+    </elements>
+</model>

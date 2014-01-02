@@ -21,6 +21,13 @@
 		3AC75798187548880052D270 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC7577A187548880052D270 /* UIKit.framework */; };
 		3AC757A0187548880052D270 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AC7579E187548880052D270 /* InfoPlist.strings */; };
 		3AC757A2187548880052D270 /* learningLanguageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC757A1187548880052D270 /* learningLanguageTests.m */; };
+		3AC757AD1875511C0052D270 /* newWord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AC757AB1875511C0052D270 /* newWord.xcdatamodeld */; };
+		3AC757C31875559F0052D270 /* ExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC757C21875559F0052D270 /* ExampleViewController.m */; };
+		3AC757C6187556320052D270 /* NewWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC757C5187556320052D270 /* NewWordViewController.m */; };
+		3AC757CF187567090052D270 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC757CE187567090052D270 /* CoreDataTableViewController.m */; };
+		3AC757D21875691F0052D270 /* NewWordTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC757D11875691F0052D270 /* NewWordTable.m */; };
+		3AC757D5187569200052D270 /* Example.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC757D4187569200052D270 /* Example.m */; };
+		3AC757D8187569E80052D270 /* NewWordTable+create.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC757D7187569E80052D270 /* NewWordTable+create.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +60,19 @@
 		3AC7579D187548880052D270 /* learningLanguageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "learningLanguageTests-Info.plist"; sourceTree = "<group>"; };
 		3AC7579F187548880052D270 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3AC757A1187548880052D270 /* learningLanguageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = learningLanguageTests.m; sourceTree = "<group>"; };
+		3AC757AC1875511C0052D270 /* newWord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = newWord.xcdatamodel; sourceTree = "<group>"; };
+		3AC757C11875559F0052D270 /* ExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleViewController.h; sourceTree = "<group>"; };
+		3AC757C21875559F0052D270 /* ExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleViewController.m; sourceTree = "<group>"; };
+		3AC757C4187556320052D270 /* NewWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewWordViewController.h; sourceTree = "<group>"; };
+		3AC757C5187556320052D270 /* NewWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewWordViewController.m; sourceTree = "<group>"; };
+		3AC757CD187567090052D270 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		3AC757CE187567090052D270 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		3AC757D01875691F0052D270 /* NewWordTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewWordTable.h; sourceTree = "<group>"; };
+		3AC757D11875691F0052D270 /* NewWordTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewWordTable.m; sourceTree = "<group>"; };
+		3AC757D3187569200052D270 /* Example.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Example.h; sourceTree = "<group>"; };
+		3AC757D4187569200052D270 /* Example.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Example.m; sourceTree = "<group>"; };
+		3AC757D6187569E80052D270 /* NewWordTable+create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NewWordTable+create.h"; sourceTree = "<group>"; };
+		3AC757D7187569E80052D270 /* NewWordTable+create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NewWordTable+create.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +102,10 @@
 		3AC7576A187548880052D270 = {
 			isa = PBXGroup;
 			children = (
+				3AC757C4187556320052D270 /* NewWordViewController.h */,
+				3AC757C5187556320052D270 /* NewWordViewController.m */,
+				3AC757C11875559F0052D270 /* ExampleViewController.h */,
+				3AC757C21875559F0052D270 /* ExampleViewController.m */,
 				3AC7577C187548880052D270 /* learningLanguage */,
 				3AC7579B187548880052D270 /* learningLanguageTests */,
 				3AC75775187548880052D270 /* Frameworks */,
@@ -117,6 +141,7 @@
 				3AC75788187548880052D270 /* Main.storyboard */,
 				3AC7578B187548880052D270 /* ViewController.h */,
 				3AC7578C187548880052D270 /* ViewController.m */,
+				3AC757B7187552660052D270 /* CoreData */,
 				3AC7578E187548880052D270 /* Images.xcassets */,
 				3AC7577D187548880052D270 /* Supporting Files */,
 			);
@@ -150,6 +175,22 @@
 				3AC7579E187548880052D270 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3AC757B7187552660052D270 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3AC757AB1875511C0052D270 /* newWord.xcdatamodeld */,
+				3AC757D01875691F0052D270 /* NewWordTable.h */,
+				3AC757D11875691F0052D270 /* NewWordTable.m */,
+				3AC757D6187569E80052D270 /* NewWordTable+create.h */,
+				3AC757D7187569E80052D270 /* NewWordTable+create.m */,
+				3AC757D3187569200052D270 /* Example.h */,
+				3AC757D4187569200052D270 /* Example.m */,
+				3AC757CD187567090052D270 /* CoreDataTableViewController.h */,
+				3AC757CE187567090052D270 /* CoreDataTableViewController.m */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,8 +291,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AC7578D187548880052D270 /* ViewController.m in Sources */,
+				3AC757CF187567090052D270 /* CoreDataTableViewController.m in Sources */,
 				3AC75787187548880052D270 /* AppDelegate.m in Sources */,
+				3AC757AD1875511C0052D270 /* newWord.xcdatamodeld in Sources */,
+				3AC757C31875559F0052D270 /* ExampleViewController.m in Sources */,
+				3AC757D5187569200052D270 /* Example.m in Sources */,
 				3AC75783187548880052D270 /* main.m in Sources */,
+				3AC757C6187556320052D270 /* NewWordViewController.m in Sources */,
+				3AC757D21875691F0052D270 /* NewWordTable.m in Sources */,
+				3AC757D8187569E80052D270 /* NewWordTable+create.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +518,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3AC757AB1875511C0052D270 /* newWord.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3AC757AC1875511C0052D270 /* newWord.xcdatamodel */,
+			);
+			currentVersion = 3AC757AC1875511C0052D270 /* newWord.xcdatamodel */;
+			path = newWord.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3AC7576B187548880052D270 /* Project object */;
 }
