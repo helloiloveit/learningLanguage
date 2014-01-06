@@ -19,5 +19,8 @@
 
 
 @property (nonatomic, strong) NewWordTable *userNewWord;
+
+
+
 @property (weak, nonatomic) IBOutlet UITextField *exampleSentence;
 @end

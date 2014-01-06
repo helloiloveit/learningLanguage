@@ -13,11 +13,17 @@
 @interface TestViewController ()
 @property (nonatomic, strong) NewWordTable * storeNewWord;
 @property (nonatomic, strong) NSTimer *timerPointer;
+//@property  (nonatomic,assign) NSInteger *countDownNumber;
 @end
 
 @implementation TestViewController
 @synthesize managedObjectContext;
 @synthesize storeNewWord;
+//@synthesize countDownNumber;
+
+#define COUNT_DOWN_TIMER 6;
+
+
 - (void)swipeDetected:(UISwipeGestureRecognizer *)gesture
 {
     switch (gesture.direction) {
@@ -29,11 +35,16 @@
             // you can include this case too
             break;
         case UISwipeGestureRecognizerDirectionLeft:
+
+            [self stopCountDown];
+
             [self changeWord];
-            [self showExample];
+
+            [self startCountDown];
+         //   [self showExample];
             break;
         case UISwipeGestureRecognizerDirectionRight:
-            [self.timerPointer invalidate];
+            [self stopCountDown];
             [self.navigationController popViewControllerAnimated:YES];
             // disable timer for both left and right swipes.
             break;
@@ -41,6 +52,20 @@
             break;
     }
 }
+
+-(void)stopCountDown
+{
+    [self.timerPointer invalidate];
+    self.timerPointer = nil;
+
+    countDownNumber =COUNT_DOWN_TIMER;
+    self.timerInfo.text = @"";
+}
+-(void)startCountDown
+{
+    self.timerPointer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownClock) userInfo:nil repeats:YES];
+}
+
 -(void)initSwipe
 {
     
@@ -83,10 +108,28 @@
                          self.displayedWord.alpha = 1.0f;
                          
                      }];
-    [self.timerPointer fire];
+}
+-(void)resetCountDownNumber
+{
 
+    countDownNumber = 0;
 }
 
+-(void)countDownClock
+{
+    if (countDownNumber == 0) {
+        [self stopCountDown];
+        [self showExample];
+        [self startCountDown];
+    } else {
+        countDownNumber = countDownNumber - 1;
+
+        int myInt = countDownNumber;
+        NSString *temp = [NSString stringWithFormat:@"%d", myInt];
+        self.timerInfo.text = temp;
+    }
+    
+}
 -(void)showExample
 {
     ExampleTable *exampleSentence = [ExampleTable getExampleOfWord:self.storeNewWord inManagedObjectContext:self.managedObjectContext];
@@ -102,18 +145,31 @@
 
 }
 
-
+-(void)startTesting
+{
+    [self changeWord];
+    
+    [self startCountDown];
+}
+-(void)initValue
+{
+    countDownNumber = COUNT_DOWN_TIMER  ;
+    self.displayedExample.text = @"";
+    self.displayedWord.text = @"";
+    self.timerInfo.text = @"";
+    
+    [self.navigationController setNavigationBarHidden:YES];
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self initSwipe];
-    [self setWordForDisplay];
-    [self showExample];
+    [self initValue];
+    
+    [self startTesting];
 
-    self.displayedExample.text = @"";
-    self.timerPointer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(showExample) userInfo:nil repeats:YES];
-    [self.timerPointer invalidate];
+
 	// Do any additional setup after loading the view.
 }
 

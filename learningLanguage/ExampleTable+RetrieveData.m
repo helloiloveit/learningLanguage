@@ -25,7 +25,7 @@
     }
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ExampleTable"];
     //request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]];
-   // request.predicate = [NSPredicate predicateWithFormat:@"exampleOfWord = %@", word];
+    request.predicate = [NSPredicate predicateWithFormat:@"exampleOfWord = %@", word];
     
     
     // Execute the fetch

@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TestViewController : UIViewController
+@interface TestViewController : UIViewController{
+    NSInteger countDownNumber;
+}
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 
+@property (weak, nonatomic) IBOutlet UILabel *timerInfo;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *displayedExample;

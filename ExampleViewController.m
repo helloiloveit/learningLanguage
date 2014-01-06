@@ -84,11 +84,11 @@
     
 }
 - (IBAction)saveExample:(id)sender {
-    NSLog(@"usernewword = %@", userNewWord);
+    
 
     [ExampleTable createExampleOfWord:self.userNewWord example:self.exampleSentence.text inManagedObjectContext:self.managedObjectContext];
     
-    
+    self.exampleSentence.text = @"";
     
 }
 
