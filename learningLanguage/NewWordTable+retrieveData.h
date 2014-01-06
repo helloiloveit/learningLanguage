@@ -1,5 +1,5 @@
 //
-//  NewWordTable.m
+//  NewWordTable+retrieveData.h
 //  learningLanguage
 //
 //  Created by huyheo on 1/6/14.
@@ -7,14 +7,7 @@
 //
 
 #import "NewWordTable.h"
-#import "ExampleTable.h"
 
-
-@implementation NewWordTable
-
-@dynamic id;
-@dynamic meanning;
-@dynamic word;
-@dynamic wordToExample;
-
+@interface NewWordTable (retrieveData)
++ (NewWordTable *)newWordByRandom:(NSManagedObjectContext *)context;
 @end

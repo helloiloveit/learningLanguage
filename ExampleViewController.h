@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "NewWordTable+create.h"
+#import "ExampleTable+create.h"
 @interface ExampleViewController : UIViewController
 
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+
+- (IBAction)saveExample:(id)sender;
+- (IBAction)doneInputting:(id)sender;
+
+
+
+@property (nonatomic, strong) NewWordTable *userNewWord;
+@property (weak, nonatomic) IBOutlet UITextField *exampleSentence;
 @end

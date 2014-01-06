@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "NewWordViewController.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
@@ -19,6 +20,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    if (!self.managedObjectContext) [self createManagedObjectContext];
 }
 
 - (void)didReceiveMemoryWarning
@@ -28,10 +30,10 @@
 }
 
 
-- (void)useDemoDocument
+- (void)createManagedObjectContext
 {
     NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    url = [url URLByAppendingPathComponent:@"Demo Document"];
+    url = [url URLByAppendingPathComponent:@"test23"];
     UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:[url path]]) {
@@ -54,4 +56,14 @@
     }
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"inputWord"]) {
+        NewWordViewController  *desSegue = [segue destinationViewController];
+        desSegue.managedObjectContext = self.managedObjectContext;
+    } else if ([segue.identifier isEqualToString:@"check_word"]) {
+        NewWordViewController  *desSegue = [segue destinationViewController];
+        desSegue.managedObjectContext = self.managedObjectContext;
+    }
+}
 @end

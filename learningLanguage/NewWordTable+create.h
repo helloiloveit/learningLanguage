@@ -14,4 +14,8 @@
 + (NewWordTable *)newWordWithMeaning:(NSString *)word
                         withMeanning:(NSString *)meanning
         inManagedObjectContext:(NSManagedObjectContext *)context;
+
+
+
+
 @end

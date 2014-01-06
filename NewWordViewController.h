@@ -12,7 +12,13 @@
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
-@property (weak, nonatomic) IBOutlet UITextField *newWord;
+@property (weak, nonatomic) IBOutlet UILabel *headerInfo;
+
+@property (weak, nonatomic) IBOutlet UITextField *inputtedWord;
+
+@property (weak, nonatomic) IBOutlet UITextField *wordMeanning;
+
+
 - (IBAction)pressDone:(id)sender;
 
 @end

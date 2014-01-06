@@ -24,7 +24,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="aU8-ps-1vH" kind="push" id="CyW-7h-LC0"/>
+                                    <segue destination="aU8-ps-1vH" kind="push" identifier="inputWord" id="CyW-7h-LC0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aP2-vA-wrx">
@@ -35,7 +35,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="QLk-VO-gDN" kind="modal" id="aBL-j1-AR6"/>
+                                    <segue destination="QLk-VO-gDN" kind="push" identifier="check_word" id="aBL-j1-AR6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -72,6 +72,9 @@
                                 <state key="normal" title="Input">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveExample:" destination="oVu-8t-p3T" eventType="touchUpInside" id="KF4-M6-ntN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziT-Dx-sym">
                                 <rect key="frame" x="171" y="478" width="97" height="34"/>
@@ -80,6 +83,9 @@
                                 <state key="normal" title="Done">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="doneInputting:" destination="oVu-8t-p3T" eventType="touchUpInside" id="ubx-ZG-qEF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Input example here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d12-2y-HOU">
                                 <rect key="frame" x="30" y="84" width="264" height="37"/>
@@ -91,15 +97,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="cv3-oe-ZgF"/>
+                    <connections>
+                        <outlet property="exampleSentence" destination="ntq-yT-oct" id="i6V-pQ-ibj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YFE-OQ-JOP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1973" y="-229"/>
         </scene>
-        <!--View Controller-->
+        <!--Test View Controller-->
         <scene sceneID="eWJ-is-7Hr">
             <objects>
-                <viewController id="QLk-VO-gDN" sceneMemberID="viewController">
+                <viewController id="QLk-VO-gDN" customClass="TestViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w6X-tS-VdQ"/>
                         <viewControllerLayoutGuide type="bottom" id="dyH-Ym-O23"/>
@@ -109,7 +118,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="word or phase" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mc8-oK-1wz">
-                                <rect key="frame" x="115" y="235" width="147" height="22"/>
+                                <rect key="frame" x="69" y="235" width="198" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jI-jj-7Ka">
+                                <rect key="frame" x="69" y="273" width="198" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -118,6 +134,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="displayedExample" destination="1jI-jj-7Ka" id="u1I-ss-0pc"/>
+                        <outlet property="displayedWord" destination="mc8-oK-1wz" id="rKu-KO-SYC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipH-1j-KWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -153,8 +173,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="example" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R1Q-B6-V5m">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R1Q-B6-V5m">
                                 <rect key="frame" x="30" y="208" width="270" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zLK-kb-cq5">
+                                <rect key="frame" x="30" y="285" width="270" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -168,7 +194,6 @@
                                 </state>
                                 <connections>
                                     <action selector="pressDone:" destination="aU8-ps-1vH" eventType="touchUpInside" id="Cja-Vi-wZO"/>
-                                    <segue destination="oVu-8t-p3T" kind="push" id="vje-oP-zG9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Input its meanning" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbU-w0-ej8">
@@ -182,7 +207,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="Fcy-kW-Qn2"/>
                     <connections>
-                        <outlet property="newWord" destination="R1Q-B6-V5m" id="9ld-L6-LJW"/>
+                        <outlet property="headerInfo" destination="mbU-w0-ej8" id="4Cx-2R-y7L"/>
+                        <outlet property="inputtedWord" destination="R1Q-B6-V5m" id="IC1-Zx-JjZ"/>
+                        <outlet property="wordMeanning" destination="zLK-kb-cq5" id="0sg-wH-ALc"/>
+                        <segue destination="oVu-8t-p3T" kind="push" identifier="input_example" id="map-mj-cOB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lz8-rS-vha" userLabel="First Responder" sceneMemberID="firstResponder"/>
